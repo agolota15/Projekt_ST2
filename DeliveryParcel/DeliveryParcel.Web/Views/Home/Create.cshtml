@@ -1,0 +1,140 @@
+﻿@model DeliveryParcel.Models.OrderCreateVm
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-10 mt-3 mb-3">
+            <div class="card shadow">
+                <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="text-white py-2">Dodaj zamówienie</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form class="col-md-auto" method="post" asp-action="Create">
+                        <div class="p-3 row">
+                            <div class="col-12 pb-2">
+                                <center>
+                                    <h4>Nadawca</h4>
+                                </center>
+                                <hr />
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-4">
+                                        <label asp-for="Sender.LastName" class="control-label m-1"></label>
+                                        <input asp-for="Sender.LastName" class="form-control" />
+                                        <span asp-validation-for="Sender.LastName" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="Sender.FirstName" class="control-label m-1"></label>
+                                        <input asp-for="Sender.FirstName" class="form-control" />
+                                        <span asp-validation-for="Sender.FirstName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-6">
+                                        <label asp-for="SenderAddress.CityName" class="control-label m-1"></label>
+                                        <input asp-for="SenderAddress.CityName" class="form-control text-center" />
+                                        <span asp-validation-for="SenderAddress.CityName" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="SenderAddress.Street" class="control-label m-1"></label>
+                                        <input asp-for="SenderAddress.Street" class="form-control" />
+                                        <span asp-validation-for="SenderAddress.Street" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-4">
+                                        <label asp-for="SenderAddress.House" class="control-label m-1"></label>
+                                        <input asp-for="SenderAddress.House" class="form-control" />
+                                        <span asp-validation-for="SenderAddress.House" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="SenderAddress.Appartament" class="control-label m-1"></label>
+                                        <input asp-for="SenderAddress.Appartament" class="form-control" />
+                                        <span asp-validation-for="SenderAddress.Appartament" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <center class="mt-4">
+                                    <h4>Odbiorca</h4>
+                                </center>
+                                <hr />
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-4">
+                                        <label asp-for="Recipient.LastName" class="control-label m-1"></label>
+                                        <input asp-for="Recipient.LastName" class="form-control" />
+                                        <span asp-validation-for="Recipient.LastName" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="Recipient.FirstName" class="control-label m-1"></label>
+                                        <input asp-for="Recipient.FirstName" class="form-control" />
+                                        <span asp-validation-for="Recipient.FirstName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-6">
+                                        <label asp-for="RecipientAddress.CityName" class="control-label m-1"></label>
+                                        <input asp-for="RecipientAddress.CityName" class="form-control text-center" />
+                                        <span asp-validation-for="RecipientAddress.CityName" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="RecipientAddress.Street" class="control-label m-1"></label>
+                                        <input asp-for="RecipientAddress.Street" class="form-control" />
+                                        <span asp-validation-for="RecipientAddress.Street" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-4">
+                                        <label asp-for="RecipientAddress.House" class="control-label m-1"></label>
+                                        <input asp-for="RecipientAddress.House" class="form-control" />
+                                        <span asp-validation-for="RecipientAddress.House" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="RecipientAddress.Appartament" class="control-label m-1"></label>
+                                        <input asp-for="RecipientAddress.Appartament" class="form-control" />
+                                        <span asp-validation-for="RecipientAddress.Appartament" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <center class="mt-4">
+                                    <h4>Informacja o zamówieniu</h4>
+                                </center>
+                                <hr />
+                                <div class="row mt-3">
+                                    <div class="col-12 col-md-6">
+                                        <label asp-for="Parcel.Wieght" class="control-label m-1"></label>
+                                        <input asp-for="Parcel.Wieght" class="form-control" />
+                                        <span asp-validation-for="Parcel.Wieght" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="ShippingDate" class="control-label m-1"></label>
+                                        <input asp-for="ShippingDate" class="form-control" />
+                                        <span asp-validation-for="ShippingDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary col-12">Dodać</button>
+                                    </div>
+                                    <div class="col">
+                                        <a asp-controller="Home" asp-action="Index" class="btn btn-danger col-12">
+                                            Powrót
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
